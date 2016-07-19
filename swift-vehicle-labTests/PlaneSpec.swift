@@ -83,23 +83,23 @@ class PlaneSpec: QuickSpec {
             
             describe("takeOff") {
                 it("sets the speed to 10% of maxSpeed") {
-                    cessna172.takeoff()
-                    p51Mustang.takeoff()
+                    cessna172.takeOff()
+                    p51Mustang.takeOff()
                     
                     expect(cessna172.speed) ≈ cessna172.maxSpeed*0.1
                     expect(p51Mustang.speed) ≈ p51Mustang.maxSpeed*0.1
                 }
                 
                 it("sets the altitude to 10% of maxAltitude") {
-                    cessna172.takeoff()
-                    p51Mustang.takeoff()
+                    cessna172.takeOff()
+                    p51Mustang.takeOff()
                     
                     expect(cessna172.altitude) ≈ cessna172.maxAltitude*0.1
                     expect(p51Mustang.altitude) ≈ p51Mustang.maxAltitude*0.1
                 }
                 
                 it("does not affect a plane already in flight") {
-                    journeyingCessna172.takeoff()
+                    journeyingCessna172.takeOff()
                     
                     expect(journeyingCessna172.speed) ≈ journeyingCessna172.maxSpeed/2
                     expect(journeyingCessna172.altitude) ≈ journeyingCessna172.maxAltitude/2
